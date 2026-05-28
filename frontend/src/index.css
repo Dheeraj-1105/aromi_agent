@@ -1,0 +1,87 @@
+@import "tailwindcss";
+
+@theme {
+  --color-base: #0f1117;
+  --color-card: #1a1d27;
+  --color-hover: #1e2130;
+  --color-border: #2a2d3e;
+  --color-accent: #7c6af7;
+  --color-text-primary: #e8e9f0;
+  --color-text-secondary: #8b8fa8;
+  --color-text-muted: #4a4d62;
+}
+
+html {
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  height: 100%;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', -apple-system, sans-serif;
+  background: #0f1117;
+  color: #e8e9f0;
+  -webkit-font-smoothing: antialiased;
+}
+
+#root {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+input, textarea, select, button {
+  font-family: inherit;
+  font-size: 14px;
+}
+
+a { color: inherit; text-decoration: none; }
+
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* Sidebar scrollbar style (TASK 3) */
+.sidebar::-webkit-scrollbar { width: 3px; }
+.sidebar::-webkit-scrollbar-track { background: transparent; }
+.sidebar::-webkit-scrollbar-thumb { 
+  background: #2a2d3e; 
+  border-radius: 3px; 
+}
+
+/* Messages scrollbar style (TASK 4) */
+.messages-area::-webkit-scrollbar { width: 3px; }
+.messages-area::-webkit-scrollbar-track { 
+  background: transparent; 
+}
+.messages-area::-webkit-scrollbar-thumb { 
+  background: #2a2d3e; 
+  border-radius: 3px; 
+}
+
+/* Global scrollbar styling (TASK 11) */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #2a2d3e transparent;
+}
+
+*::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: #2a2d3e;
+  border-radius: 4px;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background: #3a3d52;
+}

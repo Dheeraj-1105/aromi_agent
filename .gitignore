@@ -1,0 +1,137 @@
+# ══════════════════════════════════════
+# AroMi — Root .gitignore
+# ══════════════════════════════════════
+
+# ─── ENVIRONMENT & SECRETS (NEVER PUSH) ───
+.env
+.env.local
+.env.production
+.env.staging
+.env.*.local
+backend/.env
+frontend/.env
+frontend/.env.local
+
+# ─── PYTHON / FASTAPI BACKEND ───
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyc
+*.pyo
+*.pyd
+.Python
+backend/__pycache__/
+backend/**/__pycache__/
+*.egg-info/
+dist/
+build/
+eggs/
+parts/
+var/
+sdist/
+develop-eggs/
+.installed.cfg
+lib/
+lib64/
+
+# ─── VIRTUAL ENVIRONMENTS ───
+venv/
+env/
+ENV/
+.venv/
+backend/venv/
+backend/env/
+backend/.venv/
+Pipfile.lock
+
+# ─── DATABASE (LOCAL DATA — NEVER PUSH) ───
+*.db
+*.sqlite
+*.sqlite3
+aromi.db
+backend/aromi.db
+backend/*.db
+
+# ─── ALEMBIC (keep versions, ignore cache) ───
+alembic/versions/__pycache__/
+
+# ─── NODE / REACT FRONTEND ───
+node_modules/
+frontend/node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+package-lock.json        # ← ADD: optional, reduces merge conflicts
+
+# ─── BUILD OUTPUT ───
+dist/
+build/
+frontend/dist/
+frontend/build/
+*.tsbuildinfo
+
+# ─── VITE CACHE ───
+.vite/
+frontend/.vite/
+
+# ─── EDITOR & OS FILES ───
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+# ─── IDE FILES ───
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.project
+.classpath
+
+# ─── LOGS ───
+*.log
+logs/
+backend/logs/
+
+# ─── TESTING ───
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+coverage.xml
+
+# ─── DOCKER (keep compose files, ignore volumes) ───
+docker-volumes/
+
+# ─── MISC ───
+*.bak
+*.tmp
+*.temp
+.cache/
+
+# ─── LOCAL STARTUP SCRIPTS ───
+start.bat            # ← specific file only
+start.sh
+run.bat
+run.sh
+# NOTE: removed *.bat — too broad, blocks all bat files
+
+# ─── ADDED: PYTHON SPECIFIC ───
+.mypy_cache/         # ← type checker cache
+.ruff_cache/         # ← linter cache
+*.pem                # ← SSL certificates — never push
+*.key                # ← private keys — never push
+
+# ─── ADDED: GROQ / AI RELATED ───
+*.pkl                # ← any pickle/model files
+models/              # ← if you ever save local models
+
+# ─── ADDED: WINDOWS SPECIFIC ───
+$RECYCLE.BIN/
+*.lnk                # ← Windows shortcut files
