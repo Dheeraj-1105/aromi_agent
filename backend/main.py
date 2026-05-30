@@ -48,18 +48,13 @@ app.state.limiter = chat.limiter
 app.add_exception_handler(RateLimitExceeded, _rate_limit_exceeded_handler)
 
 # CORS — allow frontend origins
-ALLOWED_ORIGINS = [
-    "http://localhost:5173",
-    "http://localhost:3000",
-]
-
-# Add production frontend URL if set
-if settings.FRONTEND_URL and settings.FRONTEND_URL not in ALLOWED_ORIGINS:
-    ALLOWED_ORIGINS.append(settings.FRONTEND_URL)
-
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=ALLOWED_ORIGINS,
+    allow_origins=[
+        "http://localhost:5173",
+        "http://localhost:3000",
+        "https://aromi-agent.vercel.app",
+    ],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],

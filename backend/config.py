@@ -9,7 +9,7 @@ class Settings(BaseSettings):
     model_config = SettingsConfigDict(env_file=".env", extra="ignore")
 
     # Database
-    DATABASE_URL: str = "sqlite+aiosqlite:///./aromi.db"
+    DATABASE_URL: str = ""
 
     # Groq API (primary)
     GROQ_API_KEY: str = ""
@@ -23,7 +23,7 @@ class Settings(BaseSettings):
     JWT_EXPIRE_MINUTES: int = 1440
 
     # Frontend
-    FRONTEND_URL: str = "http://localhost:5173"
+    FRONTEND_URL: str = "https://aromi-agent.vercel.app"
 
 
 settings = Settings()
